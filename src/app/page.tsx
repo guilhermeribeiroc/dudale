@@ -53,7 +53,7 @@ const products: Product[] = [
     id: 4,
     name: 'Conjunto Linho',
     price: 'R$ 389,00',
-    src: 'https://images.unsplash.com/photo-1594938298603-522bca0b3208?w=600&q=80',
+    src: 'https://images.unsplash.com/photo-1548549557-dbe9946621da?w=600&q=80',
     tag: 'Novo',
   },
   {
