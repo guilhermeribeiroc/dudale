@@ -1,0 +1,178 @@
+/* ─── Seção ──────────────────────────────────────────────── */
+
+.section {
+  background-color: #ffffff;
+  padding: clamp(5rem, 10vh, 8rem) clamp(1.5rem, 6vw, 6rem);
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+  will-change: transform, opacity;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #00bcd4;
+  margin-bottom: 0.9rem;
+}
+
+.title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #1c1c1c;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.92rem;
+  color: #888;
+  max-width: 42ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── Grid de produtos ───────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem 1.4rem;
+}
+
+/* ─── Card ───────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+  transition: transform 0.44s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 188, 212, 0.25);
+  margin-bottom: 1.1rem;
+  will-change: clip-path;
+  transition: box-shadow 0.44s ease, border-color 0.44s ease;
+}
+
+.card:hover .imageWrapper {
+  box-shadow: 0 24px 56px rgba(0, 188, 212, 0.16);
+  border-color: rgba(0, 188, 212, 0.55);
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.07);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* badge — badge hover usa CSS transition por ser interação, não entrada */
+.badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 1;
+  background-color: #00bcd4;
+  color: #1a1a1a;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.7rem;
+  border-radius: 100px;
+}
+
+/* ─── Info do card ───────────────────────────────────────── */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.name {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  transition: color 0.34s ease;
+}
+
+.card:hover .name {
+  color: #00bcd4;
+}
+
+.price {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.88rem;
+  color: #888;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+
+/* Slide-fill: fundo cyan desliza da esquerda para a direita no hover */
+.cta {
+  align-self: flex-start;
+  background: linear-gradient(to right, #00bcd4 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% center;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 188, 212, 0.5);
+  border-radius: 100px;
+  padding: 0.55rem 1.4rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-position 0.46s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.38s ease,
+              border-color 0.38s ease;
+}
+
+.cta:hover {
+  background-position: 0% center;
+  color: #ffffff;
+  border-color: #00bcd4;
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 0.8rem;
+  }
+}

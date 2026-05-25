@@ -1,0 +1,181 @@
+/* ─── Seção ──────────────────────────────────────────────── */
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* ─── Imagem ─────────────────────────────────────────────── */
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Conteúdo ───────────────────────────────────────────── */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 7rem) clamp(2.5rem, 6vw, 6rem);
+  background-color: #f0fcfe;
+  will-change: transform, opacity;
+}
+
+/* ─── Tag com linha animada ──────────────────────────────── */
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tagLine {
+  display: block;
+  width: 3rem;
+  height: 1.5px;
+  background-color: #00bcd4;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+.tag {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #00bcd4;
+}
+
+/* ─── Headline ───────────────────────────────────────────── */
+
+.headline {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  color: #1c1c1c;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Descrição ──────────────────────────────────────────── */
+
+.description {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 38ch;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── CTA ────────────────────────────────────────────────── */
+
+.cta {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #00bcd4;
+  color: #ffffff;
+  padding: 1rem 2.6rem;
+  border-radius: 100px;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.32s ease, transform 0.3s ease, box-shadow 0.3s ease,
+              letter-spacing 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #26c6da;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0, 188, 212, 0.42);
+  letter-spacing: 0.2em;
+}
+
+/* ─── Navegação do carrossel ─────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  will-change: transform, opacity;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1.5px solid #00bcd4;
+  background: transparent;
+  color: #00bcd4;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.22s, color 0.22s;
+}
+
+.arrow:hover {
+  background-color: #00bcd4;
+  color: #ffffff;
+}
+
+.dots {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 188, 212, 0.28);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.22s, transform 0.22s;
+}
+
+.dotActive {
+  background-color: #00bcd4;
+  transform: scale(1.5);
+}
+
+/* ─── Responsividade ─────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .imageWrapper {
+    height: 60vw;
+    min-height: 320px;
+  }
+
+  .content {
+    padding: 3rem 1.5rem;
+  }
+}
